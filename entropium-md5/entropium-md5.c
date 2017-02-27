@@ -77,7 +77,7 @@ void entropium_addEntropy(unsigned length_b, const void *data){
 	}
 	md5_lastBlock(&s, data, length_b);
 	uint8_t i;
-	for (i=0; i < MD5_BLOCK_BYTES / 4 / 4; ++i){
+	for (i=0; i < MD5_BLOCK_BYTES / 4 / 4; i++){
 		rndCore[i + offset] ^= s.a[i];
 	}
 	offset += ENTROPIUM_RANDOMBLOCK_SIZE / 4;
